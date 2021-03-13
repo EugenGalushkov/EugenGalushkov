@@ -1,0 +1,405 @@
+*{margin: 0px;padding: 0px;
+    
+font-family: "OpenSans";}
+
+.container{
+    width: 1250px;
+    padding: 30px 20px;
+    margin: 0px auto;
+    box-sizing: border-box;
+}
+
+header{background-color: #f6f2f2;}
+
+header nav{height: 90px;
+background-color: black;
+text-align: center;
+}
+header nav a{color: white;
+    line-height: 80px;
+    padding-top: 10px;
+    padding: 10px 25px 0 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+header nav a.active{ background-color: red;}
+
+.present{text-align: justify;
+padding-bottom: 50px;
+}
+.present .head{width: 500px;
+display: inline-block;
+padding-top: 100px;
+vertical-align: top;}
+
+
+.present .head h1{font-size: 60px;
+font-weight: bolder;
+text-transform: uppercase;
+text-align: left;}
+
+.present .head .description{ 
+    line-height: 1.5;
+    padding-top: 25px;
+}
+
+.present .video{display: inline-block;
+width: 550px;
+height: 360px;
+vertical-align: top;
+padding-top: 100px;}
+
+.present .video .video-content{
+width: 550px;
+height: 360px;
+box-shadow: 0 0 10px 0 black;}
+
+
+
+    .service_left {display: inline-block;width: 520px;}
+
+    .service_left h2{
+    padding-top:80px ;
+    text-align: left;}
+    
+
+    .services .service_left .description{
+    text-align: justify;
+    line-height: 1.5;
+    padding-top: 25px;}
+
+
+    .services .service_right{display: inline-block;
+    width: 626px;
+    height: 524px;
+    font-size: 0px ;
+    vertical-align: top;
+    margin-left:59px;
+    margin-top:80px;}
+
+    .icon{display: inline-block;
+        width: 40px;
+        height: 40px;}
+    
+    .service_right h5{
+            color: #737373;
+            font-size: 20px;
+            padding-top: 30px;
+            padding-bottom: 23px;}
+    
+    .service_right p{
+            display: inline-block;
+            width: 300px;
+            font-size: 16px;
+            color:#737373;}
+
+.service_right .bloks{
+display: inline-block; 
+width: 313px;
+height: 262px;}
+
+.feature_products .products{display: inline-block;
+width:1250px;
+text-align: center;}
+
+.products .description p{display: inline-block;
+width: 520px;
+color:#737373;
+padding-top:25px;
+padding-bottom:25px;}
+    
+.products nav{height: 25px;
+    text-align: center;
+    padding-bottom:60px ;
+}
+.products nav a{
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0 10px;
+}
+.products nav a.active{ color: #ff0707;}
+
+.products .photo_products{display: inline-block;
+width: 1270px;
+height: 620px;}
+
+.products .photo_products .photo {display:inline-block;
+    text-align: center;
+overflow:hidden;
+width: 290px;
+height: 290px;
+margin: 10px;}
+
+.products .photo_products .photo img{width: auto;
+    height: 100%;
+    margin-left:-120px;
+}
+
+.meet_our_team h2{padding-top: 70px;}
+
+.meet_our_team .header_team .description p{display: inline-block;
+width: 480px;padding: 35px 0px}
+
+.team_photo .head_photo {display:inline-block;
+text-align: center;
+overflow:hidden;
+width: 320px;
+height: 460px;
+margin-right: 74px;
+}
+.team_photo .head_photo .photo{height: 460px;}
+
+.team_photo .head_photo .photo img{height: 100%;
+    margin-left: -200px;}
+
+.team_photo .head_name{display: inline-block;
+    vertical-align: top;}
+
+
+.team_photo .description{display:inline-block; vertical-align: top; width: 640px;
+    padding-top: 35px;}
+
+    .team_photo .link_masseger{display: inline-block;}
+
+    .team_photo .link_masseger a{
+        font-style: italic;
+        font-size: 20px;
+        padding-right: 25px;
+        padding-top: 40px;}
+
+        .photo_team {display: inline-block;
+            font-size: 0px;
+            margin-top: 60px;
+            width: 880px;
+        height: 215px;}
+
+        .photo_team .photo {display: inline-block;
+        overflow:hidden;
+        width: 200px;
+        height: 215px;
+    padding-right: 20px;}
+
+    .photo_team .photo img{width:200px}
+
+    .post_email{
+        margin-top: 80px;
+        background-color: #f5f0dd;
+        text-align: center;}
+
+    .head_email h2{
+        text-transform:none;
+        padding-top: 60px;
+        padding-bottom: 35px;
+        color:white}
+
+    .head_email .subscribe p{display: inline-block;
+        width: 550px;
+        color:#fff;
+        font-size: 18px;
+padding-bottom:65px;
+        }
+
+
+    .form_email form{display: inline-block;
+         width: 760px;
+         height: 80px;
+    margin-bottom: 140px;}
+
+    .form_email input[type="email"] {
+        display: inline-block;
+        width: 500px;
+        height: 80px;
+        font-size: 18px;
+        border-radius: 6px;
+        border:0px;
+        padding-left:30px;
+        margin-right: 10px;}
+
+        input[type="submit"]{
+        display:inline-block;
+        width: 215px;
+        height: 80px;
+        color: #ff2d2d;
+        background-color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        border:0px;
+        font-size: 18px;
+        margin:0px
+        }
+
+        .get_in_tach .head_get_in_tach{display: inline-block;
+        width: 750px;
+        height: 290px;
+        padding-top: 45px;}
+        .get_in_tach .head_get_in_tach h2{padding-bottom: 50px;}
+
+    .head_get_in_tach .description p{display: inline-block;
+        width: 730px;
+        height: 70px;
+    padding-bottom:55px;}
+
+    .get_in_tach .send_massege_form{display: inline-block;
+    margin-right:80px;
+    width: 730px;
+    height: 480px;}
+
+
+.send_massege_form input{box-sizing: border-box;
+    display: inline-block;
+    background-color: #e5e5e5;
+    color:#676767;
+    border-radius: 10px;
+    border:none;
+    height: 70px;
+    font-size: 18px;
+    padding-left: 50px
+}
+.send_massege_form input[type="name"]{
+width: 335px;
+margin-right:55px;
+margin-bottom:45px;}
+
+.send_massege_form input[type="email"]{
+    width: 335px;
+}
+
+.send_massege_form textarea{
+box-sizing: border-box;
+display: inline-block;
+width: 730px;
+height: 250px;
+margin-bottom: 45px;
+background-color:#e5e5e5;
+border-radius: 10px;
+border: none;
+font-size: 18px;
+padding:35px 50px 0px 50px;
+resize:none;
+}
+
+.send_massege_form input[type="submit"]{
+    border-radius: 5px;
+    width: 730px;
+    padding:0px
+
+}
+
+.get_in_tach .contact_info{display: inline-block;
+    width:315px;
+    height: 482px;
+    background-color: #2d2d2d;
+    padding-left:80px;}
+
+.contact_info {vertical-align: top;}
+
+.contact_info .head{display: inline-block;
+    padding-top:145px;
+}
+.contact_info .head h6{font-weight: bolder;
+text-transform: uppercase;
+color:#e0e0e0;
+padding-bottom: 30px;
+font-size:18px;}
+
+.contact_info .description {display: inline-block;
+    width: 270px;
+}
+.contact_info .description p{
+padding-bottom: 30px;
+font-size: 16px;}
+
+.get_in_tach .container{margin-bottom: 80px;}
+
+footer{height: 110px;
+    background-color:#313030;
+    text-align: center;
+}
+
+footer .content{display: inline-block;
+width: 1280px;
+height: 110px;
+text-align: left;
+}
+
+footer .content>p{display: inline-block;
+    line-height: 35px;
+padding-left:165px ;
+padding-top:50px ;
+color:#b8b8b8;
+}
+
+footer .massege_icon{
+    display: inline-block;
+    width: 200px;
+    height: 35px;
+    margin-left: 550px;
+}
+
+.massege_icon > *{display: inline-block;
+width:35px;
+height:35px;
+padding: 0 5px;
+overflow:hidden;
+vertical-align: middle;
+}
+
+.massege_icon img{height:35px;
+    filter: invert(100%)}
+
+
+
+    
+/*common*/
+
+p{line-height: 1.5;}
+
+.link>a{width:225px;text-align: center; color:red;}
+.link>a:hover{color:white;} 
+
+.button{
+    line-height: 55px;
+    margin-top: 60px;
+    border:2px solid #ff0707;
+    display:inline-block;
+color: #ff0707;
+border-radius: 6px;
+font-weight: bold;
+text-decoration: none;
+}
+
+.button:hover,button a:hover{background-color: #ff0707;
+color:white;}
+
+.last-line{display: inline-block;
+width: 100%;}
+
+.gorizontal_line_gray{display: inline-block;
+width:100%;
+border:1px solid #ececec;
+margin-top: 60px;}
+
+.gorizontal_line_red{display: inline-block;
+    width: 130px;
+    border:1px solid #ff2d2d;
+    margin-bottom: 80px;
+}
+
+h2{font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 40px;
+    color:#585858;}
+
+h3{font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 24px;
+    color:#585858;}
+
+.description{font-size: 18px;
+        color: #6f6d6d;}
+
+a{display: inline-block;
+text-decoration: none;
+color: #737373;}

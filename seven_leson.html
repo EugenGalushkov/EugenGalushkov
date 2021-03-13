@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Седьмое занятие</title>
+    <link rel="stylesheet" href="css/all.css">
+</head>
+
+<body>
+    <header>
+<h1 class="nazvanie">Седьмое занятие: Формы</h1>
+    </header>
+    
+    <nav><div class="ssilki">
+        <a href="glavnaya.html">Главная страница</a>
+        <a href="moi_celi.html">Мои цели</a>
+        <a href="layouts.html">Галерея макетов</a>                
+</div>
+</nav>
+
+<div class="content">
+    <aside> 
+        <a href="first_leson.html">Первое занятие</a>
+        <a href="second_leson.html">Второе занятие</a>
+        <a href="third_leson.html">Третье занятие</a>
+        <a href="four_lesson.html">Четвертое занятие</a>  
+        <a href="five_leson.html">Пятое занятие</a>
+        <a href="six_leson.html">Шестое занятие</a>
+        <a href="seven_leson.html">Седьмое занятие</a>
+        <a href="eight_leson.html">Восьмое занятие</a>
+        <a href="nine_leson.html">Девятое занятие</a>
+    </aside>
+
+<div class="text_content seven">
+<h2><strong>Form</strong></h2>
+<p>Элемент HTML form (&lt;form&gt;) представляет (собой) раздел документа, содержащий интерактивные элементы управления, которые позволяют пользователю отправлять информацию на веб-сервер.</p>
+<h2>Тег &lt;input&gt;</h2>
+<P>Тег &lt;input&gt; является одним из разносторонних элементов формы и позволяет создавать разные элементы интерфейса и обеспечить взаимодействие с пользователем. Главным образом &lt;input&gt; предназначен для создания текстовых полей, различных кнопок, переключателей и флажков. Хотя элемент &lt;input&gt;не требуется помещать внутрь контейнера &lt;form&gt;, определяющего форму, но если введенные пользователем данные должны быть отправлены на сервер, где их обрабатывает серверная программа, то указывать &lt;form&gt; обязательно. То же самое обстоит и в случае обработки данных с помощью клиентских приложений, например, скриптов на языке JavaScript.<br>
+    Основной атрибут тега &lt;input&gt;, определяющий вид элемента — <strong>type</strong>. Он позволяет задавать следующие элементы формы: 
+    <br><strong>текстовое поле <i>(text)</i>  <br>
+        <input type="text">
+        <br> поле с паролем <i>(password)</i>  <br>
+        <input type="password">
+        <br> поле с e-mail <i>(e-mail)</i>  <br>
+        <input type="email"> 
+        <br> поле ввода текста <i>(textarea)</i>  <br>
+        <textarea name="coment" cols="40" rows="5" wrap="soft"></textarea>
+        <br> переключатель <i>(radio)</i>  <br>
+        <input type="radio" name="mass" value="70" ></label>70kg</label>
+        <input type="radio" name="mass" value="80"></label>80kg</label>
+        <br> флажок <i>(checkbox)</i>  <br>
+        <input name="acept" type="checkbox" value="ok"></label>OK</label>
+        <br> раскрывающийся  список<i>(select)</i> <br>
+        
+        <select name="cauntry">
+        <optgroup label="Азия">
+            <option value="Tokio">Токио</option>
+            <option value="Seoul">Сеул</option>
+            <option value="Honk_Kong">Гонк Конг</option>
+        </optgroup>
+        <optgroup label="Европа">
+            <option value="Budapest">Будапешт</option>
+            <option value="Munchen">Мюнхен</option>
+            <option value="Paris">Париж</option>
+        </optgroup>
+        <optgroup label="Америка">
+            <option value="Chicago">Чикаго</option>
+            <option value="Rio_de_Janeiro">Рио-де-Жанейро</option>
+        </optgroup>
+
+        </select>
+        <br> кнопка для отправки формы <i>(submit)</i>  <br>
+        <input type="submit" value="OK">
+        <br> кнопка для очистки формы <i>(reset)</i>  <br>
+        <input type="reset" value="reset">
+        <br> поле для отправки файла <i>(file)</i>  <br>
+        <input type="file" accept="docx/xlsx" id="file" ><label for="file"></label>
+        <br> кнопка с изображением <i>(image)</i></strong>  <br>
+        <input type="image" name="image"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP9Nm0_vwJv3QYkMTW9F0rnRi5MfoymeJSPw&usqp=CAU" width="100px">
+        <br> Для каждого элемента существует свой список атрибутов, которые определяют его вид и характеристики.</P>
+        </div></div>
+        <footer> &copy; <em>Galushkov Eugeniy 2021</em></footer>
+    </body>
+    </html>
