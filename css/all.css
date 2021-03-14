@@ -58,15 +58,15 @@ aside {display:table-cell;
         margin: 20px;
         text-align: center;
         font-size: 20px;
-    vertical-align: top;
-    padding-bottom: 15px;
-    padding-left: 20px;}
+        vertical-align: top;
+        padding-bottom: 15px;
+        padding-left: 20px;}
      
-        .ssilki_hobby a{font-weight:bold;
-        font-size: 25px;
-        padding:15px;
-        color:rgb(0, 38, 255);
-        text-decoration: none;}
+   .ssilki_hobby a{font-weight:bold;
+    font-size: 25px;
+    padding:15px;
+    color:rgb(0, 38, 255);
+    text-decoration: none;}            
 
 
 .text_content.glavnaya ol li{text-align: left;}
@@ -221,12 +221,22 @@ margin-bottom: 15px;}
     .text_content.nine p{padding-bottom: 15px;line-height: 1.5;}
     .text_content.nine {text-align: justify;padding-top: 15px;}
 
+    .text_content.ten h2{padding: 15px; text-align: center;}
+    .text_content.ten h3{color:rgb(6, 26, 88); text-align: left;}
+    .text_content.ten p{padding-bottom: 15px;line-height: 1.5;}
+    .text_content.ten {text-align: justify;padding-top: 15px;}
+    .text_content.ten li{padding:5px;}
+    .text_content.ten dt{font-weight: bolder;font-style: italic;}
+    .text_content.ten dd{padding-bottom: 5px;}
+
+
+
 
 /* ............layout page............... */
 
 .content_layout{display: block;
     width: 1280px;
-    padding: 20px 90px;
+    padding: 20px 50px;
     margin: 0 auto;}
 
 .layout_icon{display: inline-block;
