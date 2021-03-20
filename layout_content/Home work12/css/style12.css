@@ -1,0 +1,38 @@
+.container{width: 1000px;
+    height: 800px;
+    margin:0 auto;
+    background-color: #2d5b8d;}
+    .load{
+    width:640px;
+    height: 150px;
+    font-size: 0;
+    position: relative;
+    top:50%;
+    left:50%;
+    margin-left: -320px;
+    margin-top: -225px;}
+
+    .load .circle{display: inline-block;
+    background-color: #fff;
+    width:100px;
+    height: 100px;
+    border-radius: 50%;
+    margin:25px 30px;
+    animation-timing-function:ease;}
+
+.a{position:absolute;left:0px;animation:loader_a 0.7s infinite;}
+.b,.c,.d{animation:loader 0.7s infinite;}
+.e{animation:loader_e 0.7s infinite;}
+
+@keyframes loader_a{
+from{transform:scale(0);}
+to{transform:scale(1);}
+}
+@keyframes loader{
+from{transform:translate(0px);}
+to{transform:translate(160px);}
+}
+@keyframes loader_e{
+from{transform:scale(1);}
+to{transform:scale(0);}
+}

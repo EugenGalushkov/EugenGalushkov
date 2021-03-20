@@ -10,10 +10,10 @@ margin-top: 56px;
 margin-left: 50px;}
 
 
-.page_fon{display: inline-block;
+.page_fon{display:block;
 background-color:white;
    width: 1280px;
-   margin: 15px 180px;}
+   margin: 0 auto;}
 
  .figures_gradient{display: inline-block;
    font-size: 0;

@@ -39,7 +39,10 @@ nav .link a{
     text-decoration: none; 
     color:black;
     font-size: 24px;
-padding-right: 20px;}
+padding-right: 20px;
+transition: all 1s;}
+
+nav .link a:hover{text-shadow: 0 0 3px rgb(18, 18, 190);}
 
 .about_me{text-align: justify;}
 
@@ -59,16 +62,14 @@ margin-bottom: 60px;}
 .about_me .photo_me{display: inline-block;
     width: 390px;
     height: 410px;
-}
+    transition: all 1s}
 
+.photo_me:hover{transform: scale(1.2);}
 
 .about_me .right{display: inline-block;
 width: 640px;
 height: 400px;
 vertical-align: top;}
-
-
-
 
 .right p{display: inline-block;
 width: 605px;
@@ -77,8 +78,6 @@ padding-top: 27px;
 font-size: 18px;
 line-height: 1.5;
 padding-bottom:20px}
-
-
 
 .right .gray_blok{display: inline-block;
 width: 645px;
@@ -100,14 +99,27 @@ text-align: left;}
 
 
 .skils .left{display: inline-block;
-width: 575px;}
+width: 575px;
+overflow: hidden;}
 
-.skils .left .photoshop{width: 400px;margin-top: 25px;}
-.skils .left .html{width:500px;}
-.skils .left .css{width:500px;}
-.skils .left .JS{width: 400px;}
-.skils .left .angular{width: 305px;}
+.skils .left .photoshop{margin-top: 25px;width: 400px;animation:skils_1_4 2s ease 2s;animation-fill-mode:backwards;}
+.skils .left .html{width:500px;animation:skils_2_3 2s ease 3s;animation-fill-mode:backwards;}
+.skils .left .css{width:500px;animation:skils_2_3 2s ease 4s;animation-fill-mode:backwards;}
+.skils .left .JS{width: 400px;animation:skils_1_4 2s ease 5s;animation-fill-mode:backwards;}
+.skils .left .angular{width: 305px;animation:skils_5 2s ease 6s;animation-fill-mode:backwards;}
 
+@keyframes skils_1_4{
+    from{transform:translate(-420px)}
+    to{transform:translate(0)}
+}
+@keyframes skils_2_3{
+    from{transform:translate(-520px)}
+    to{transform:translate(0)}
+}
+@keyframes skils_5{
+    from{transform:translate(-325px)}
+    to{transform:translate(0)}
+}
 
 .shkala{display: inline-block;
     margin-top:8px;
@@ -147,7 +159,10 @@ width: 160px;
 height: 160px;
 padding-left: 50px;
 padding-top:15px;
-padding-bottom: 10px;}
+padding-bottom: 10px;
+transition: all 1s;}
+.skils .cat_shadow img{border-radius:50%}
+.skils .cat_shadow:hover{transform:scale(1.1);}
 
 .skils .cat_shadow_description{display: inline-block;
 width: 810px;
@@ -178,10 +193,9 @@ padding-bottom:10px;}
 
 footer .contacts_seti p{display: inline-block;font-size:18px;}
 footer .contacts_seti p a{padding-right: 150px;}
-footer .contacts_seti a {
-    font-size:18px;
-    color:white;
-font-weight: bold;}
+footer .contacts_seti a {font-size:18px;color:white;font-weight: bold;transition: all 1s;}
+
+p>a:hover{transform: scale(1.2);color: yellow;}
 
 footer .contacts_seti h2,.contacts h2{display: inline-block;
     font-size: 30px;
@@ -196,7 +210,10 @@ footer .rad_gradient{display: inline-block;
     background: radial-gradient(closest-corner circle at center ,white 50%,transparent 50%,transparent 60%, white  60%);
     border-radius: 50%;
     background-size: 100%;
-    text-align: center;}
+    text-align: center;
+    transition: all 1s;}
+
+footer .rad_gradient:hover{transform:scale(1.2)}
 
     footer h1{display: inline-block;
         width: 120px;
@@ -219,7 +236,7 @@ body h3{display: inline-block;
     font-size: 26px;
     line-height: 55px;
     padding-left: 14px;
-padding-right: 65px;
+    padding-right: 65px;
     padding-bottom: 27px;}
 
 .black_figure_gradient{display: inline-block;
@@ -236,7 +253,7 @@ width: 100%;}
     display: inline-block;
     width: 100%;
     border:1px solid black;
-margin-top:45px}
+    margin-top:45px}
 
 .left_skil{display: inline-block;
 height: 42px;
