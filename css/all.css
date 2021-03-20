@@ -228,6 +228,8 @@ margin-bottom: 15px;}
     .text_content.ten li{padding:5px;}
     .text_content.ten dt{font-weight: bolder;font-style: italic;}
     .text_content.ten dd{padding-bottom: 5px;}
+    .text_content.ten .line_before_lesons{padding:5px; text-align: center; font-size: 25px;
+    font-weight: bolder;font-style: italic;font-family:Verdana,Tahoma, sans-serif; }
 
 
 
