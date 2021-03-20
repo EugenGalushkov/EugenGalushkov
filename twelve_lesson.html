@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Двенадцатое занятие:Трансформации и анимации</title>
+    <link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+<header>
+    <h1 class="nazvanie">Двенадцатое занятие:<br>Трансформации и анимации</h1>
+</header>
+            <nav><div class="ssilki">
+                <a href="index.html">Главная страница</a>
+                    <a href="moi_celi.html">Мои цели</a>
+                    <a href="layouts.html">Галерея макетов</a>                
+                </div>
+</nav>
+
+<div class="content">
+    <aside> 
+        <a href="first_lesson.html">Первое занятие</a>
+        <a href="second_lesson.html">Второе занятие</a>
+        <a href="third_lesson.html">Третье занятие</a>
+        <a href="four_lesson.html">Четвертое занятие</a>  
+        <a href="five_lesson.html">Пятое занятие</a>
+        <a href="six_lesson.html">Шестое занятие</a>
+        <a href="seven_lesson.html">Седьмое занятие</a>
+        <a href="eight_lesson.html">Восьмое занятие</a>
+        <a href="nine_lesson.html">Девятое занятие</a>
+        <a href="ten_lesson.html">Десятое занятие</a>
+        <a href="twelve_lesson.html">Двенадцатое занятие</a>
+    </aside>
+        <div class="text_content twelve">
+<h2>Transform</h2>
+<p>Трансформирует элемент, в частности, позволяет его масштабировать, вращать, сдвигать, наклонять, а также комбинировать виды трансформаций.</p>
+<h3>rotate</h3>
+<p>Поворот элемента на заданный угол относительно точки трансформации, задаваемой свойством <i>transform-origin.</i></p>
+<h3>scale | scaleX | scaleY</h3>
+<p>масштаб элемента по горизонтали и вертикали.</p>
+<h3>skewX | skewY</h3>
+<p>наклоняет элемент на заданный угол по вертикали или горизонтали.</p>
+<h3>translate | translateX | translateY</h3>
+<p>сдвигает элемент на заданное значение по горизонтали и вертикали.</p>
+<h2>Transition</h2>
+<p>предоставляют способ контролировать скорость анимации, при изменении CSS свойств. Вместо того, чтобы свойство применилось сразу, вы можете сделать это действие происходящим в течение какого-то момента времени.</p>
+<h3>transition-property</h3>
+<p>указывает имя или имена свойств, чьи переходы должны анимироваться. Только свойства, указанные здесь, анимируются в переходах; изменение других свойств будет происходить обычным образом.</p>
+<h3>transition-duration</h3>
+<p>определяет время происхождения перехода. Можно указать время анимирования всех свойств перехода сразу или для каждого свойства в отдельности.</p>
+<h3>transition-timing-function [ease | linear | steps]</h3>
+<p>определяет функцию, указывающую, как вычисляются промежуточные значения свойств. Вы также можете выбрать ослабления от функции замедления</p>
+<h3>transition-delay</h3>
+<p>определяет как много должно пройти времени, перед тем как начнётся переход.</p>
+
+<p>Короткая запись синтаксиса:<br>
+
+    <strong>div {
+        transition: &lt;property&gt; &lt;duration&gt; &lt;timing-function&gt; &lt;delay&gt;;
+    }</strong></p>
+<h2>Animation</h2>
+<h3>animation-name</h3>
+<p>задаёт список анимаций, чтобы применить к элементу. Каждое имя является правилом <b>@keyframes</b>, которое задаёт значения свойств для последовательности анимации.</p>
+<h3>animation-duration</h3>
+<p>устанавливает длительность анимации во времени за один цикл.</p>
+<h3>animation-timing-function</h3>
+<p>задаёт как происходит анимация в течении длительности каждого цикла.</p>
+<h3>animation-delay</h3>
+<p>определяет время задержки перед стартом анимации.</p>
+<h3>animation-iteration-count</h3>
+<p> определяет сколько раз будет проигрываться анимационный цикл, перед тем как остановиться.</p>
+<h3>animation-direction [normal | reverse | alternate | alternate-revese]</h3>
+<p>определяет, должна ли анимация воспроизводиться вперед, назад или переменно вперед и назад.</p>
+<h3>animation-fill-mode [none | forwards | backwards | both]</h3>
+<p>определяет, как нужно применять стили к объекту анимации до и после ее выполнения.</p>
+<h3>animation-play-state</h3>
+<p>определяет состояние анимации, паузы или проигрыша. Это можно использовать, чтобы определить текущее состояние анимации, например, в скриптах.
+    Если возобновить приостановленную анимацию, то она запустит её с того места, где она была поставлена на паузу, а не начнется с начала.</p>
+
+        </div>
+        </div>
+        <footer>
+            &copy; <em>Galushkov Eugeniy 2021</em>
+        </footer>   
+        
+        </body>
+        </html>

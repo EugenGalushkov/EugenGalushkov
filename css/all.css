@@ -21,7 +21,10 @@
          padding: 30px;
          font-weight:bold;
          color:rgb(255, 255, 255);
-         text-decoration: none;}
+         text-decoration: none;
+         transition:color 1s,text-shadow 1s;}
+
+    .ssilki a:hover{color:rgb(16, 16, 190);text-shadow:0 0 3px rgb(0, 0, 0);}
 
     .ssilki {font-size:30px;    
         width:100%; 
@@ -44,7 +47,10 @@ aside {display:table-cell;
             font-style: oblique;
             font-family: Arial;  
             text-decoration: none;
-            color:rgba(145, 255, 0, 0.9);}
+            color:rgba(145, 255, 0, 0.9);
+            transition:text-decoration 1s}
+
+    aside a:hover{text-decoration: underline;}       
 
 
   .images{display: inline-block;
@@ -233,6 +239,11 @@ margin-bottom: 15px;}
     .text_content.ten .line_before_lesons{padding:5px; text-align: center; font-size: 25px;
     font-weight: bolder;font-style: italic;font-family:Verdana,Tahoma, sans-serif; }
 
+    .text_content.twelve h2{padding: 15px; text-align: center;}
+    .text_content.twelve h3{color:rgb(141, 0, 129); text-align: left;}
+    .text_content.twelve p{padding-bottom: 15px;line-height: 1.5;}
+    .text_content.twelve {text-align: justify;padding-top: 15px;}
+
 
 
 
@@ -251,8 +262,12 @@ width: 400px;
 height: 230px;
 overflow: hidden;
 text-align: center;
-position: relative;
-background-color:#d1d1d1;}
+background-color:#d1d1d1;
+transition: all 1s;
+position: relative;}
+
+.layout_icon .photo{width: 100%;height: 100%;}
+.layout_icon:hover .photo{transform:scale(0.8);}
 
 .image{width: 100%;}
 
@@ -265,12 +280,9 @@ background-color:#d1d1d1;}
     overflow: hidden;
     width: 100%;
     height: 0;
-    transition: .7s ease;}
-
-.layout_icon:hover .image{width:auto;height:100%}
+    transition: 0.7s ease;}
 
 .layout_icon:hover .overlay {height: 15%;}
-
 
 .link{
   position: absolute;
