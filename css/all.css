@@ -244,6 +244,14 @@ margin-bottom: 15px;}
     .text_content.twelve p{padding-bottom: 15px;line-height: 1.5;}
     .text_content.twelve {text-align: justify;padding-top: 15px;}
 
+    .text_content.thirteen {text-align: left;padding-top: 15px;}
+    .text_content.thirteen h2{padding: 15px; text-align: center;}
+    .text_content.thirteen h3{padding: 5px 15px;line-height:30px;display: inline-block; color:rgb(194, 127, 3); text-align: left;}
+    .text_content.thirteen h4{padding:10px 30px;font-size:18px;line-height:26px;display: inline-block; color:rgb(3, 16, 194); text-align: left;}
+    .text_content.thirteen p{text-align:justify;padding-bottom:15px;line-height: 1.5;}
+
+
+
 
 
 
