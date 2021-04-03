@@ -26,7 +26,7 @@
 
     .ssilki a:hover{color:rgb(16, 16, 190);text-shadow:0 0 3px rgb(0, 0, 0);}
 
-    .ssilki {font-size:30px;    
+    .ssilki {font-size:25px;    
         width:100%; 
         height: 90px; 
         background-color:rgb(107, 111, 122);}
@@ -43,7 +43,7 @@ aside {display:table-cell;
     aside a{display:inline-block;
             padding:12px ;
             margin:0px;
-            font-size: 25px;
+            font-size: 20px;
             font-style: oblique;
             font-family: Arial;  
             text-decoration: none;
@@ -250,6 +250,12 @@ margin-bottom: 15px;}
     .text_content.thirteen h4{padding:10px 30px;font-size:18px;line-height:26px;display: inline-block; color:rgb(3, 16, 194); text-align: left;}
     .text_content.thirteen p{text-align:justify;padding-bottom:15px;line-height: 1.5;}
 
+    .text_content.fivteenth h2{padding: 15px; text-align: center;text-shadow: 1px 0 2px black;}
+    .text_content.fivteenth h3{color:rgb(7, 121, 41); text-align: left;font-weight: 800;}
+    .text_content.fivteenth p{padding-bottom: 15px;line-height: 1.5;}
+    .text_content.fivteenth {text-align: justify;padding-top: 15px;}
+
+
 
 
 
@@ -313,9 +319,6 @@ position: relative;}
 .link a:active{ color: red;}
     
 /* ............................................... */
-
-
-
 
 footer{display: inline-block;
     width: 100%;
