@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Восемнадцатое занятие</title>
+    <link rel="stylesheet" href="css/all.css">
+</head>
+
+<body>
+    <header>
+<h1 class="nazvanie">Восемнадцатое занятие: Сборка проекта.Gulp.Постпроцессоры</h1>
+    </header>
+    
+    <nav><div class="ssilki">
+        <a href="index.html">Главная страница</a>
+        <a href="moi_celi.html">Мои цели</a>
+        <a href="layouts.html">Галерея макетов</a>                  
+</div>
+</nav>
+
+<div class="content">
+    <aside> 
+        <a href="first_lesson.html">Первое занятие</a>
+        <a href="second_lesson.html">Второе занятие</a>
+        <a href="third_lesson.html">Третье занятие</a>
+        <a href="four_lesson.html">Четвертое занятие</a>  
+        <a href="five_lesson.html">Пятое занятие</a>
+        <a href="six_lesson.html">Шестое занятие</a>
+        <a href="seven_lesson.html">Седьмое занятие</a>
+        <a href="eight_lesson.html">Восьмое занятие</a>
+        <a href="nine_lesson.html">Девятое занятие</a>
+        <a href="ten_lesson.html">Десятое занятие</a>
+        <a href="twelve_lesson.html">Двенадцатое занятие</a>
+        <a href="thirteen_lesson.html">Тринадцатое занятие</a>
+        <a href="fivteenth_lesson.html">Пятнадцатое занятие</a>
+        <a href="eighteen_lesson.html">Восемнадцатое занятие</a>
+    </aside>
+    
+        <div class="text_content eighteen">
+<h2>Постпроцессоры</h2>
+<p>Постпроцессоры берут готовый CSS и автоматизируют его: например, автоматическое добавление вендорных префиксов к новым свойствам CSS3, автоматизация CSS под оптимальную работу на большинствах современных браузеров.<br>
+<b>Постпроцессор</b> — это библиотека, которая преобразует CSS файл и на выходе сохраняет оптимизированный CSS.</p>
+<h2>Gulp</h2>
+<p><b>Gulp</b>- инструмент, который помогает автоматизировать рутинные задачи веб-разработки.</p>
+<ul class=spisok>Gulp предназначен для решения таких задач, как:
+    <li class=row>Создание веб-сервера и автоматическая перезагрузка страницы в браузере при сохранении кода, слежение за изменениями в файлах проекта;</li>
+    <li class=row>Использование различных JavaScript, CSS и HTML препроцессоров (CoffeeScript, Less, Sass, Stylus, Jade и т.д.);</li>
+    <li class=row>Минификация CSS и JS кода, а также, оптимизация и конкатенация отдельных файлов проекта в один;</li>
+    <li class=row>Автоматическое создание вендорных префиксов (приставок к названию CSS свойства, которые добавляют производители браузеров для нестандартных свойств) для CSS.</li>
+    <li class=row>Управление файлами и папками в рамках проекта - создание, удаление, переименование;</li>
+    <li class=row>Запуск и контроль выполнения внешних команд операционной системы;</li>
+    <li class=row>Работа с изображениями - сжатие, создание спрайтов, ресайз (png, jpg, svg и др.);</li>
+    <li class=row>Деплой (отправка на внешний сервер) проекта по FTP, SFTP, Git и т.д.</li>
+    <li class=row>Подключение и использование в проекте безгранично большого количества Node.js и Gulp утилит, программ и плагинов.</li>
+    <li class=row>Создание различных карт проекта и автоматизация другого ручного труда.</li>
+</ul>
+<h2>Установка</h2>
+<p>Для работы с Gulp у вас должен быть установлен Node.js. Установка Node.js для различных платформ довольно простая - скачиваете инсталлер Node для своей операционной системы и устанавливаете.<br>
+    После того, как Node установлен, можно приступать к установке Gulp. Откройте терминал (в режиме супер пользователя(администратора)) и выполните следующую команду:  <span>npm i gulp -g</span><br>
+    Из данной команды мы видим, что запускается менеджер пакетов <b>npm (Node Package Manager)</b>, который командой install устанавливает Gulp в систему. Ключ <b>-g</b> говорит о том, что пакет установится 
+    в систему глобально, то-есть в систему, а не в папку проекта. Без ключа <b>-g</b> пакет устанавливаются в ту папку, в которой выполняются текущие команды</p> 
+<p>Для добавление нужных вам библиотек в проект нужно прописать <span>npm i &lt;lib-name&gt; --save-dev</span><br>
+    Параметр <b>--save-dev</b> означает что библиотека устанавливаеться непосредственно в проект, если нужно установка в систему нужно поставить <b>-g</b>.</p>
+    <h2>Создание задач в gulp</h2>
+    <p>Первый шаг к использованию Gulp — добавить require в файл gulpfile.</p>
+    <span>var gulp = require('gulp')</span><br>
+    Оператор require указывает Node искать в папке node_modules пакет с именем gulp. Как только пакет найден, мы присваиваем его содержимое переменной gulp.
+<p>Теперь мы можем начать писать Gulp-задачу с этой переменной gulp. Основной синтаксис задачи:</p>
+<span>gulp.task('task-name', function() {<br>
+        // Начинка здесь<br>
+  });</span><br>
+  task-name указывает на имя задачи, которое будет использоваться всякий раз, когда вы хотите запустить задачу в Gulp. Вы также можете выполнить эту задачу через командную строку, написав gulp task-name.
+  <h3>Пример задачи</h3>
+  <span>gulp.task('task-name', function () {<br>
+    return gulp.src('source-files') // Получаем исходный файл через gulp.src<br>
+    .pipe(aGulpPlugin()) // Посылаем его через плагин Gulp<br>
+    .pipe(gulp.dest('destination')) // Выводим файл в папку назначения<br>
+  })</span>
+ <h2>Модули для gulp</h2>
+ <h3>gulp-rename</h3>
+ <p>Предоставляет простые методы переименования файлов.</p>
+ <span>var rename = require("gulp-rename");<br><br>
+    gulp.src("./src/main/text/hello.txt")<br>
+      .pipe(rename("main/text/ciao/goodbye.md"))<br>
+      .pipe(gulp.dest("./dist"));
+     </span>
+     <h3>gulp-clean</h3>
+     <p>Удаляет файлы и папки.</p>
+     <span>var gulp = require('gulp');<br>
+        var clean = require('gulp-clean');<br><br>
+         
+        gulp.task('default', function () {<br>
+            return gulp.src('app/tmp', {read: false})<br>
+                .pipe(clean());<br>
+        });</span>
+    <h3>galp-less</h3>
+    <p>Плагин LESS для GULP</p>
+    <span>var less = require('gulp-less');<br>
+        var path = require('path');<br><br>
+         
+        gulp.task('less', function () {<br>
+          return gulp.src('./less/**/*.less')<br>
+            .pipe(less({<br>
+              paths: [ path.join(__dirname, 'less', 'includes') ]<br>
+            }))<br>
+            .pipe(gulp.dest('./public/css'));<br>
+        });</span>
+        <h3>gulp-postcss</h3>
+        <p>Плагин для обработки CSS через несколько плагинов, но анализирует CSS только один раз.</p>
+        <b>Установка:</b><br>
+        <span>npm install --save-dev postcss gulp-postcss</span><br>
+<br>
+       <span>var postcss = require('gulp-postcss');<br>
+            var gulp = require('gulp');<br><br>
+             
+            gulp.task('css', function () {<br>
+                return gulp.src('./src/*.css')<br>
+                    .pipe(postcss())<br>
+                    .pipe(gulp.dest('./dest'));<br>
+            });</span>
+        <h3>browser-sync</h3>
+        <p>Исключает повторяющиеся ручные задачи - от перезагрузки в реальном времени до отправки URL.</p>
+        <b>Установка:</b><br>
+        <span>npm install -g browser-sync</span>
+
+        <h3>Команда gulp.watch()</h3>
+        <p>Для отслеживания изменений в любом из файлов проекта.</p>
+        <span>gulp.task('watch', function(){<br>
+            gulp.watch('js/*.js', ['uglify']);<br>
+            gulp.watch('css/*.css', ['concat']);<br>
+          });</span>
+<h2>postcss и его модули</h2>
+<h3>autoprefixer</h3>
+<p>Для синтаксического анализа CSS и добавления префиксов поставщиков в правила CSS с использованием значений из  Can I Use .</p>
+Пример:<br>
+<span>::placeholder {<br>
+    color: gray;}</span><br>
+    после autoprefixer<br>
+    <span>::-moz-placeholder {<br>
+        color: gray;<br>
+      }<br>
+      :-ms-input-placeholder {<br>
+        color: gray;<br>
+      }<br>
+      ::placeholder {<br>
+        color: gray;<br>
+      }</span>
+<h3>cssnano</h3>
+<p>берет ваш красиво отформатированный CSS и прогоняет его через множество целенаправленных оптимизаций, чтобы гарантировать, что конечный результат будет как можно меньше для производственной среды.</p>
+Пример:<br>
+<span>/ * нормализовать селекторы * /<br>
+    h1 :: before , h1 : before { <br>
+        / * еще больше сокращаем стенографию * /<br>
+        padding: 10px 20px 10px 20px ;  <br>  
+        / * уменьшаем значения цвета * /<br>
+        color : # ff0000 ; <br>
+        / * удаляем повторяющиеся свойства * /<br>
+        font-weight : 400 ; <br>
+        font-weight : 400 ; </span>,<br>
+        после cssnano <br>
+        <span>h1:before{margin:10px 20px;color:red;font-weight:400</span><br>   
+<h3>postcss-assets</h3>
+<p>Набор полезных функций по обработке изображений:
+    <ul>
+        <li>Замена URL: Учитывая имя файла, PostCSS заменяет resolve(image) на корневой путь или полный URL.</li>
+        <li>Обработка разрешения: PostCSS Assets заменяет width(image), height(image) или size(image) на их пиксельные эквиваленты.</li>
+        <li>Обработка изображений: PostCSS Assets заменяет inline(image) на строку в кодировке Base64.</li>
+        <li>Очистка кэша: PostCSS Assets может добавлять случайную строку запроса в конец ссылки на изображение для проверки того, что был загружен последний файл.</li>
+    </ul>
+</p>
+<h3>cssnext</h3>
+<p>С cssnext вы можете пользоваться новейшим синтаксисом CSS уже сегодня.</p>
+<ul>В плагине длинный список возможностей, среди которых поддержка:
+    <li>Var переменные</li>
+    <li>#rrggbbaa цвета</li>
+    <li>Цветовые функции</li>
+    <li>Фильтры</li>
+    <li>Фолбэки</li>
+</ul>
+<p>Во время работы cssnext переводит код на синтаксис, который сегодня используется в браузерах.</p>
+<h3>rucksack-css</h3>
+<p>Предлагает ряд функций, которые по словам разработчиков делают CSS разработку снова веселой!</p>
+<ul>
+    <li>Адаптивная типографика, в которой размер шрифта и высота строки настраиваются всего одной строкой font-size: responsive.</li>
+    <li>Количественные псевдоселекторы типа li:at-least(4), рассчитанные на любые списки с 4 или более пунктами.</li>
+    <li>Псевдонимы свойств. К примеру, объявление свойства background через bg.</li>
+    <li>Набор готовых функций анимации.</li>
+</ul>
+<h3>css-mqpacker</h3>
+<p>Oптимизирует медиа запросы в одно правило:</p>
+Пример:<br>
+<span>@media (min-width: 30em) {<br>
+    .widget1 { width: 50%; }<br>
+  }<br>
+  <br>
+  @media (min-width: 60em) {<br>
+    .widget1 { width: 25%; }<br>
+  }<br>
+  <br>
+  .widget2 { width: 100px; }<br>
+  <br>
+  @media (min-width: 30em) {<br>
+    .widget2 { width: 200px; }<br>
+  }</span><br><br>
+  после css-mqpacker <br>
+  <span>@media (min-width: 30em) {<br>
+    .widget1 { width: 50%; }<br>
+    .widget2 { width: 200px; }<br>
+  }<br>
+  <br>
+  @media (min-width: 60em) {<br>
+    .widget1 { width: 25%; }<br>
+  }</span>
+        </div>
+        </div>
+        <footer>
+            &copy; <em>Galushkov Eugeniy 2021</em>
+        </footer>   
+        </body>
+        </html>
