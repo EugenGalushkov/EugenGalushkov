@@ -1,0 +1,11 @@
+@font-face {
+    font-family:"Phenomena" ;
+    src: url("./Phenomena-Regular.otf");
+    font-weight: normal;  
+}
+
+@font-face{
+    font-family: "Phenomena";
+    src: url("./Phenomena-Bold.otf");
+    font-weight: bold;  
+}

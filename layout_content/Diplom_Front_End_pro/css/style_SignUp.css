@@ -1,0 +1,65 @@
+*{padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Phenomena";
+    background-repeat: no-repeat;}
+
+
+  
+
+    .container__body{
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 1440px;
+        min-width: 450px;
+        padding: 0 100px 0 100px;
+        overflow: hidden;
+    }
+ 
+    header{display: flex;
+    width: 100%;}
+
+
+    .header__body{
+        height: 100px;
+        background-image:url("../content/signUp_bg.jpg") ;
+        background-position: center;
+       background-size: 1240px auto;
+
+    }
+
+    .header_text{
+        color: #fff;
+        text-shadow: 2px 2px 3px black;
+        margin:4px;
+        font-size: 50px;}
+
+    .forms__body{
+        display: flex;
+        max-width: 500px;
+        border: 4px double black;
+        border-top:none ;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 18px;
+    }
+    input{font-size: 18px;
+        padding: 5px;
+        width: 300px;
+        margin-bottom:10px;}
+
+    textarea{font-size: 18px;
+        padding: 5px;
+        width: 300px;
+        margin-bottom:10px;
+        resize:none}
+
+    select{ font-size: 18px;
+        width: 300px;
+        height: 36px;
+        margin-bottom:10px;}
+    

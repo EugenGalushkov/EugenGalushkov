@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <script defer src="./js/signUp.js"></script>
+    <link rel="stylesheet" href="./font/font_Phenomena.css">
+    <link rel="stylesheet" href="./css/style_SignUp.css">
+    <title>Tattoo signUp</title>
+</head>
+<body>
+
+    <section class="container header">
+        <div class="container__body header__body">
+            <header>
+                <h1 class="header_text">Онлайн запись</h1>
+            </header>
+        </div>
+    </section>
+    <section class="container forms">
+        <div class="container__body forms__body">
+            <form name="form" action="">
+            <h3>Имя</h3>
+            <input class="inputName" type="text" required>
+            <h3>Телефон</h3>
+            <input class="inputPhone" type="tel" placeholder="+380" required>
+            <h3>Выберете стиль</h3>
+            <select class="inputStyle" id="select">
+                <option value="none"></option>
+                <option value="Биомеханика">Биомеханика</option>
+                <option value="Олд скул">Олд скул</option>
+                <option value="Нью Скул">Нью Скул</option>
+            </select>
+            <h3>Выберете дату</h3>
+            <input class="inputDate" type="date" >
+            <h3>Коментарий</h3>
+            <textarea class="inputComent" rows="4" maxlength="50"></textarea>
+            <input class ="inputSubmit" type="submit" value="Записаться"></input>
+        </form>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+</body>
+</html>
