@@ -1,3 +1,4 @@
+// const container = document.querySelector('.container')
 const content = document.querySelector('.content')
 const contentTop = document.querySelector('.content__top')
 const contentTopBg = document.querySelector('.content__top_bg')
@@ -8,7 +9,7 @@ const btnNext = document.querySelector('.btn.next')
 const btnPrev = document.querySelector('.btn.prev')
 
 window.onload = function () {
-    content.setAttribute('style', 'background-image:  url("./Twinings_Assets/peppermint-\ BG.jpg");')
+    content.setAttribute('style', `background-image:  url("./Twinings_Assets/peppermint-\ BG.jpg");`)
 }
 
 const slides = [{

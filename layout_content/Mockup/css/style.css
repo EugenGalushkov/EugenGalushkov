@@ -12,15 +12,14 @@
     justify-content: space-between;
     position: relative;
     margin: 0 auto;
-    width: 450px;
-    height: 750px;
+    width: 100vw;
+    height: 100vh;
     min-width: 280px;
     z-index: 1;
     overflow: hidden;
     transition: all 500ms;
     background-image: url('../Twinings_Assets/_loading.jpg');
     background-size: cover;
-    z-index: 1;
 }
 
 .noLandscape{
@@ -34,10 +33,10 @@
     background-size: contain;
     z-index: 10;
 }
-@media screen and (max-width:470px){
+@media screen and (min-width:500px){
     .content{
-        width: 100vw;
-        height: 100vh;
+        width: 500px;
+        height: 890px;
     }
 }
 
