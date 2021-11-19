@@ -5,7 +5,9 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-
+.container{
+    margin:0 auto;
+}
 .content{
     display: flex;
     flex-direction: column;
@@ -35,6 +37,10 @@
 }
 @media screen and (min-width:500px){
     .content{
+        width: 500px;
+        height: 890px;
+    }
+    .container{
         width: 500px;
         height: 890px;
     }
