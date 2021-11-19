@@ -82,7 +82,6 @@ let ofset = 0
 let flag = true
 
 function createCards() {
-    console.log(ofset)
     let step = ofset;
     for (let i = 0; i <= 1; i++) {
         let div = document.createElement('div')
