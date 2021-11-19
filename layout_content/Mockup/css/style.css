@@ -1,0 +1,214 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto;
+    width: 450px;
+    height: 750px;
+    min-width: 280px;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 500ms;
+    background-image: url('../Twinings_Assets/_loading.jpg');
+    background-size: cover;
+    z-index: 1;
+}
+
+.noLandscape{
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    background-image: url('../Twinings_Assets/not_available.png');
+    background-size: contain;
+    z-index: 10;
+}
+@media screen and (max-width:470px){
+    .content{
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+@media screen and (orientation: landscape){
+    .noLandscape{
+        visibility:visible;
+    }
+}
+
+.content__top{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 72.8vw;
+}
+
+.content__top_bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    background-size: contain;
+    background-position: top left;
+    transition: all 800ms;
+    
+}
+.content__top_bg.load{
+    animation: transY 450ms linear 500ms;
+    animation-fill-mode: backwards;
+    background-image: url('../Twinings_Assets/pepermint\ -\ tagline-back.png');
+}
+
+.content__top_label{
+    width: 18%;
+    height: 15%;
+    position: absolute;
+    top:0;
+    left:8%;
+    background-image: url('../Twinings_Assets/peppermint-newBanner.png');
+    background-size: contain;
+    z-index: 2;
+    transition: all 600ms;
+}
+.content__top_label.load{
+    animation: transY 400ms linear 1200ms;
+    animation-fill-mode:backwards;
+}
+
+.content__top_text{ 
+    width: 67.5%;
+    height: 42.5%;
+    position: absolute;
+    top:40.8%;
+    left:11.5%;
+    background-image: url('../Twinings_Assets/pepermint\ -\ tagline.png');
+    background-size: contain;
+    animation: scale3d 300ms linear 900ms;
+    animation-fill-mode: backwards;
+    z-index: 2;
+}
+
+
+
+
+.content__bottom{
+    position: relative;
+    bottom: 0%;
+    width: 100%;
+    height: 104.9vw;
+}
+
+.content__bottom_bg{
+    position: relative;
+    top:0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.content__bottom_bg >.img{
+    position: absolute;
+    background-size: contain;
+    animation: scale3d 600ms linear 200ms;
+    animation-fill-mode:backwards;
+}
+
+.carusel{
+    position: relative;
+    top:-100%;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.carusel__card{
+    position: absolute;
+    width:61% ;
+    height:58.76%;
+    top:12.22% ;
+    left:100%;
+    background-size: contain;
+    transition: all 900ms;
+}
+
+.carusel__card.load{
+    left: 21.5%;
+    animation: transXActive 600ms linear 300ms;
+    animation-fill-mode: backwards;
+}
+
+.btn{
+    width:7.8%;
+    height:11.4%;
+    position: absolute;
+    top:34.88%;
+    background-size: cover;
+    animation: scale3d 500ms linear 1.75s;
+    animation-fill-mode: backwards;
+    transition: all 100ms;
+    z-index:5;
+}
+.btn:active{transform: scale(1.1);}
+
+.btn.next{
+    background-image: url('../Twinings_Assets/arrow\ right.png');
+right:4.7% ;}
+
+.btn.prev{
+    background-image: url('../Twinings_Assets/arrow\ left.png');
+left:4.7%;}
+
+.btn__shop{
+    width:38.5% ;
+    height:6.3% ;
+    background-image: url('../Twinings_Assets/CTA.png');
+    background-size: contain;
+    position:absolute;
+    bottom:10.4% ;
+    left: 34%;
+    animation: opacityUp 300ms linear 1600ms;
+    animation-fill-mode: backwards;
+    z-index: 9;
+}
+
+.btn__shop>a{
+    display: inline-block;
+    width: 100%;
+    height: 100%
+}
+
+@keyframes scale3d{
+    0%{transform: scale(0);}
+    100%{transform: scale(1);}
+}
+
+@keyframes transY{
+    0%{transform: translateY(-100%);}
+    100%{transform: translateY(0);}
+}
+
+@keyframes transXActive{
+    0%{left:100%;}
+    100%{left:calc(50% - 28.5%);}
+}
+
+@keyframes opacityUp{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+
+@keyframes opacityDown{
+    0%{opacity:1;}
+    100%{opacity:0;}
+}
