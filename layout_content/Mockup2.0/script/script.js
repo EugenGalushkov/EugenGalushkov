@@ -100,13 +100,14 @@ function createCards() {
 }
 createCards()
 
-let btnNextmove = function () {
+function btnNextmove() {
     btnNext.removeEventListener('click', btnNextmove)
+    carusel.removeEventListener('touchend', swipe)
     ofset = (ofset + 1 == slides.length) ? 0 : ofset + 1;
     let caruselSlides = carusel.querySelectorAll('.carusel__card')
     caruselSlides[0].style.left = "-100%"
     caruselSlides[1].style.left = "21.5%"
-    setTimeout(function () { carusel.removeChild(caruselSlides[0]), carusel.removeChild(caruselSlides[2]), btnNext.addEventListener('click', btnNextmove) }, 500)
+    setTimeout(function () { carusel.removeChild(caruselSlides[0]), carusel.removeChild(caruselSlides[2]), btnNext.addEventListener('click', btnNextmove), carusel.addEventListener('touchend', swipe) }, 500)
     createCards()
     contentBotBg.innerHTML = slides[ofset].bg
     content.setAttribute('style', `background-image:  url("${slides[ofset].contentBg}")`)
@@ -114,13 +115,14 @@ let btnNextmove = function () {
     firstClick()
 }
 
-let btnPrevmove = function () {
+function btnPrevmove() {
     btnPrev.removeEventListener('click', btnPrevmove)
+    carusel.removeEventListener('touchend', swipe)
     ofset = (ofset - 1 < 0) ? slides.length - 1 : ofset - 1;
     let caruselSlides = carusel.querySelectorAll('.carusel__card')
     caruselSlides[2].style.left = "21.5%"
     caruselSlides[0].style.left = "100%"
-    setTimeout(function () { carusel.removeChild(caruselSlides[0]), carusel.removeChild(caruselSlides[1]), btnPrev.addEventListener('click', btnPrevmove) }, 500)
+    setTimeout(function () { carusel.removeChild(caruselSlides[0]), carusel.removeChild(caruselSlides[1]), btnPrev.addEventListener('click', btnPrevmove), carusel.addEventListener('touchend', swipe) }, 500)
     createCards()
     contentBotBg.innerHTML = slides[ofset].bg
     content.setAttribute('style', `background-image:  url("${slides[ofset].contentBg}")`)
@@ -139,7 +141,8 @@ carusel.addEventListener('touchstart', function (e) {
     e.stopPropagation();
     initialPoint = e.changedTouches[0];
 });
-carusel.addEventListener('touchend', function (e) {
+
+let swipe = function (e) {
     e.preventDefault();
     e.stopPropagation();
     finalPoint = e.changedTouches[0];
@@ -148,7 +151,9 @@ carusel.addEventListener('touchend', function (e) {
         if (finalPoint.pageX > initialPoint.pageX) { btnPrevmove() }
         else { btnNextmove() }
     }
-});
+}
+
+carusel.addEventListener('touchend', swipe)
 
 function firstClick() {
     if (flag === true) {
