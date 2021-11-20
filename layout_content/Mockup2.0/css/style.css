@@ -35,16 +35,6 @@
     background-size: contain;
     z-index: 10;
 }
-@media screen and (min-width:500px){
-    .content{
-        width: 500px;
-        height: 890px;
-    }
-    .container{
-        width: 500px;
-        height: 890px;
-    }
-}
 
 @media screen and (orientation: landscape){
     .noLandscape{
@@ -66,10 +56,17 @@
     top:0;
     background-size: contain;
     background-position: top left;
-    transition: all 800ms;
-    
+    transition: all 500ms;
+    opacity: 0;
 }
+.content__top_bg.active{
+    animation: opacityUp 500ms linear;
+    animation-fill-mode:backwards;
+    opacity:1;
+}
+
 .content__top_bg.load{
+    opacity: 1;
     animation: transY 450ms linear 500ms;
     animation-fill-mode: backwards;
     background-image: url('../Twinings_Assets/pepermint\ -\ tagline-back.png');
@@ -103,8 +100,6 @@
     animation-fill-mode: backwards;
     z-index: 2;
 }
-
-
 
 
 .content__bottom{
@@ -205,15 +200,10 @@ left:4.7%;}
 
 @keyframes transXActive{
     0%{left:100%;}
-    100%{left:calc(50% - 28.5%);}
+    100%{left:21.5%;}
 }
 
 @keyframes opacityUp{
     0%{opacity:0;}
     100%{opacity:1;}
-}
-
-@keyframes opacityDown{
-    0%{opacity:1;}
-    100%{opacity:0;}
 }

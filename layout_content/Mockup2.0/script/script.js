@@ -1,28 +1,32 @@
 const container = document.querySelector('.container')
 const content = document.querySelector('.content')
-const contentTop = document.querySelector('.content__top')
-const contentTopBg = document.querySelector('.content__top_bg')
-const contentTopLabel = document.querySelector('.content__top_label')
+let contentTopBg = document.querySelectorAll('.content__top_bg')
+// const contentTop = document.querySelector('.content__top')
+// const contentTopBg = document.querySelector('.content__top_bg')
+// const contentTopLabel = document.querySelector('.content__top_label')
 const contentBotBg = document.querySelector('.content__bottom_bg')
 const carusel = document.querySelector('.carusel')
 const btnNext = document.querySelector('.btn.next')
 const btnPrev = document.querySelector('.btn.prev')
 
+
 window.onload = function () {
     content.setAttribute('style', `background-image:  url("./Twinings_Assets/peppermint-\ BG.jpg");`)
-    if (window.innerWidth < 500) { container.setAttribute('style', `width:${window.innerWidth}px;height:${window.innerHeight}px`) }
-}
-
-window.addEventListener('resize', function () {
-    if (window.innerWidth < 500) {
+    if ((window.innerWidth / window.innerHeight) <= 0.567) {
         container.setAttribute('style', `width:${window.innerWidth}px;height:${window.innerHeight}px`)
     }
+    else { container.setAttribute('style', `width:${window.innerHeight * 0.567}px;height:${window.innerHeight}px`) }
+}
+// console.log(window.innerWidth / window.innerHeight <= 0.567)
+window.addEventListener('resize', function () {
+    if ((window.innerWidth / window.innerHeight) <= 0.567) {
+        container.setAttribute('style', `width:${window.innerWidth}px;height:${window.innerHeight}px`)
+    }
+    else { container.setAttribute('style', `width:${window.innerHeight * 0.567}px;height:${window.innerHeight}px`) }
 })
 
 const slides = [{
     img: './Twinings_Assets/peppermint-product.png',
-    header: './Twinings_Assets/upper tagline - 1.png',
-    label: './Twinings_Assets/peppermint-newBanner.png',
     contentBg: './Twinings_Assets/peppermint- BG.jpg',
     bg: `<div class="img"
     style="background-image: url('./Twinings_Assets/pepermint\ -\ elements/strawberry-1.png');width:34%;height:34.21% ;top:3.7% ;left:-16.11%;">
@@ -45,8 +49,6 @@ const slides = [{
 },
 {
     img: './Twinings_Assets/raspberry-product.png',
-    header: './Twinings_Assets/raspberry - tagline.png',
-    label: './Twinings_Assets/raspberry-new.png',
     contentBg: './Twinings_Assets/raspberry - BG.jpg',
     bg: `<div class="img"
     style="background-image: url('./Twinings_Assets/raspberry\ -\ elements/Raspberry 1.png');width:33%;height:45%;top:-11%;left:-10%;">
@@ -75,8 +77,6 @@ const slides = [{
 },
 {
     img: './Twinings_Assets/peach-product.png',
-    header: './Twinings_Assets/peach - tagline.png',
-    label: './Twinings_Assets/peach-newBanner.png',
     contentBg: './Twinings_Assets/peach - BG.jpg',
     bg: `<div class="img"
     style="background-image: url('./Twinings_Assets/peach\ -\ elements/peach.png');width:32.5%;height:41.5%;top:-2.7%;left:57.2%;">
@@ -113,14 +113,13 @@ function btnNextmove() {
     createCards()
     contentBotBg.innerHTML = slides[ofset].bg
     content.setAttribute('style', `background-image:  url("${slides[ofset].contentBg}")`)
-    contentTopLabel.setAttribute('style', `background-image:  url("${slides[ofset].label}")`)
-    contentTopBg.setAttribute('style', `background-image:  url("${slides[ofset].header}")`)
+    loadTopBg("next")
     firstClick()
 }
 
 function btnPrevmove() {
     btnNext.removeEventListener('click', function () { btnNextmove() })
-    ofset = (ofset - 1 == -1) ? slides.length - 1 : ofset - 1;
+    ofset = (ofset - 1 < 0) ? slides.length - 1 : ofset - 1;
     let caruselSlides = carusel.querySelectorAll('.carusel__card')
     caruselSlides[2].style.left = "21.5%"
     caruselSlides[0].style.left = "100%"
@@ -128,8 +127,7 @@ function btnPrevmove() {
     createCards()
     contentBotBg.innerHTML = slides[ofset].bg
     content.setAttribute('style', `background-image:  url("${slides[ofset].contentBg}")`)
-    contentTopLabel.setAttribute('style', `background-image:  url("${slides[ofset].label}")`)
-    contentTopBg.setAttribute('style', `background-image:  url("${slides[ofset].header}")`)
+    loadTopBg("prev")
     firstClick()
 }
 
@@ -158,9 +156,22 @@ carusel.addEventListener('touchend', function (e) {
 
 function firstClick() {
     if (flag === true) {
-        document.querySelector('.content__top_label').classList.remove('load')
-        document.querySelector('.content__top_bg').classList.remove('load')
-        setTimeout(function () { document.querySelector('.content__top_bg').removeChild(document.querySelector('.content__top_text')), 500 })
+        document.querySelector('.content__top_bg.load').style.opacity = "0"
     }
     flag = false;
+}
+
+function loadTopBg(move) {
+    let ofsetNext
+    let ofsetPrev
+    if (move == "next") {
+        ofsetNext = (ofset + 1 > contentTopBg.length - 1) ? 0 : ofset + 1;
+        ofsetPrev = (ofset == 0) ? contentTopBg.length - 1 : ofset
+    }
+    if (move == "prev") {
+        ofsetPrev = (ofset + 1 == contentTopBg.length - 1) ? 1 : ofset + 2
+        ofsetNext = ofset + 1
+    }
+    contentTopBg[ofsetNext].classList.add('active')
+    contentTopBg[ofsetPrev].classList.remove('active')
 }
