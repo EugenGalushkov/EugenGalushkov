@@ -1,29 +1,10 @@
 const container = document.querySelector('.container')
 const content = document.querySelector('.content')
 let contentTopBg = document.querySelectorAll('.content__top_bg')
-// const contentTop = document.querySelector('.content__top')
-// const contentTopBg = document.querySelector('.content__top_bg')
-// const contentTopLabel = document.querySelector('.content__top_label')
 const contentBotBg = document.querySelector('.content__bottom_bg')
 const carusel = document.querySelector('.carusel')
 const btnNext = document.querySelector('.btn.next')
 const btnPrev = document.querySelector('.btn.prev')
-
-
-window.onload = function () {
-    content.setAttribute('style', `background-image:  url("./Twinings_Assets/peppermint-\ BG.jpg");`)
-    if ((window.innerWidth / window.innerHeight) <= 0.567) {
-        container.setAttribute('style', `width:${window.innerWidth}px;height:${window.innerHeight}px`)
-    }
-    else { container.setAttribute('style', `width:${window.innerHeight * 0.567}px;height:${window.innerHeight}px`) }
-}
-// console.log(window.innerWidth / window.innerHeight <= 0.567)
-window.addEventListener('resize', function () {
-    if ((window.innerWidth / window.innerHeight) <= 0.567) {
-        container.setAttribute('style', `width:${window.innerWidth}px;height:${window.innerHeight}px`)
-    }
-    else { container.setAttribute('style', `width:${window.innerHeight * 0.567}px;height:${window.innerHeight}px`) }
-})
 
 const slides = [{
     img: './Twinings_Assets/peppermint-product.png',
@@ -86,6 +67,21 @@ const slides = [{
 </div>`,
 }]
 
+window.onload = function () {
+    content.setAttribute('style', `background-image:  url("./Twinings_Assets/peppermint-\ BG.jpg");`)
+    if ((window.innerWidth / window.innerHeight) <= 0.567) {
+        container.setAttribute('style', `width:${window.innerWidth}px;height:${window.innerHeight}px`)
+    }
+    else { container.setAttribute('style', `width:${window.innerHeight * 0.567}px;height:${window.innerHeight}px`) }
+}
+
+window.addEventListener('resize', function () {
+    if ((window.innerWidth / window.innerHeight) <= 0.567) {
+        container.setAttribute('style', `width:${window.innerWidth}px;height:${window.innerHeight}px`)
+    }
+    else { container.setAttribute('style', `width:${window.innerHeight * 0.567}px;height:${window.innerHeight}px`) }
+})
+
 let ofset = 0
 let flag = true
 
@@ -104,12 +100,13 @@ function createCards() {
 }
 createCards()
 
-function btnNextmove() {
+let btnNextmove = function () {
+    btnNext.removeEventListener('click', btnNextmove)
     ofset = (ofset + 1 == slides.length) ? 0 : ofset + 1;
     let caruselSlides = carusel.querySelectorAll('.carusel__card')
     caruselSlides[0].style.left = "-100%"
     caruselSlides[1].style.left = "21.5%"
-    setTimeout(function () { carusel.removeChild(caruselSlides[0]), carusel.removeChild(caruselSlides[2]) }, 500)
+    setTimeout(function () { carusel.removeChild(caruselSlides[0]), carusel.removeChild(caruselSlides[2]), btnNext.addEventListener('click', btnNextmove) }, 500)
     createCards()
     contentBotBg.innerHTML = slides[ofset].bg
     content.setAttribute('style', `background-image:  url("${slides[ofset].contentBg}")`)
@@ -117,13 +114,13 @@ function btnNextmove() {
     firstClick()
 }
 
-function btnPrevmove() {
-    btnNext.removeEventListener('click', function () { btnNextmove() })
+let btnPrevmove = function () {
+    btnPrev.removeEventListener('click', btnPrevmove)
     ofset = (ofset - 1 < 0) ? slides.length - 1 : ofset - 1;
     let caruselSlides = carusel.querySelectorAll('.carusel__card')
     caruselSlides[2].style.left = "21.5%"
     caruselSlides[0].style.left = "100%"
-    setTimeout(function () { carusel.removeChild(caruselSlides[0]), carusel.removeChild(caruselSlides[1]) }, 500)
+    setTimeout(function () { carusel.removeChild(caruselSlides[0]), carusel.removeChild(caruselSlides[1]), btnPrev.addEventListener('click', btnPrevmove) }, 500)
     createCards()
     contentBotBg.innerHTML = slides[ofset].bg
     content.setAttribute('style', `background-image:  url("${slides[ofset].contentBg}")`)
@@ -131,9 +128,8 @@ function btnPrevmove() {
     firstClick()
 }
 
-
-btnNext.addEventListener('click', function () { btnNextmove() })
-btnPrev.addEventListener('click', function () { btnPrevmove() })
+btnNext.addEventListener('click', btnNextmove)
+btnPrev.addEventListener('click', btnPrevmove)
 
 
 let initialPoint;
@@ -174,4 +170,5 @@ function loadTopBg(move) {
     }
     contentTopBg[ofsetNext].classList.add('active')
     contentTopBg[ofsetPrev].classList.remove('active')
+
 }

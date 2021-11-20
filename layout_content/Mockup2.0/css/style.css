@@ -153,7 +153,7 @@
     height:11.4%;
     position: absolute;
     top:34.88%;
-    background-size: cover;
+    background-size: contain;
     animation: scale3d 500ms linear 1.75s;
     animation-fill-mode: backwards;
     transition: all 100ms;
