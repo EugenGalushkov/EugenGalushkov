@@ -56,11 +56,11 @@
     top:0;
     background-size: contain;
     background-position: top left;
-    transition: all 500ms;
+    transition: all 600ms;
     opacity: 0;
 }
 .content__top_bg.active{
-    animation: opacityUp 500ms linear;
+    animation: opacityUp 600ms linear;
     animation-fill-mode:backwards;
     opacity:1;
 }
@@ -137,7 +137,7 @@
     width:61% ;
     height:58.76%;
     top:12.22% ;
-    left:100%;
+    left:104%;
     background-size: contain;
     transition: all 900ms;
 }

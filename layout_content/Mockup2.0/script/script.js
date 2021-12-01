@@ -75,12 +75,6 @@ window.onload = function () {
     else { container.setAttribute('style', `width:${window.innerHeight * 0.567}px;height:${window.innerHeight}px`) }
 }
 
-window.addEventListener('resize', function () {
-    if ((window.innerWidth / window.innerHeight) <= 0.567) {
-        container.setAttribute('style', `width:${window.innerWidth}px;height:${window.innerHeight}px`)
-    }
-    else { container.setAttribute('style', `width:${window.innerHeight * 0.567}px;height:${window.innerHeight}px`) }
-})
 
 let ofset = 0
 let flag = true
@@ -89,12 +83,8 @@ function createCards() {
     let step = ofset;
     for (let i = 0; i <= 1; i++) {
         let div = document.createElement('div')
-        div.classList.add('carusel__card')
-        if (i == 0) {
-            step = (step + 1 == slides.length) ? 0 : step + 1
-            div.setAttribute('style', `background-image:url(${slides[step].img});`, step = (step + 1 == slides.length) ? 0 : step + 1)
-        }
-        else { div.setAttribute('style', `background-image:url(${slides[step].img});left:-65%`) }
+        div.classList.add('carusel__card');
+        (i == 0) ? (step = (step + 1 == slides.length) ? 0 : step + 1, div.setAttribute('style', `background-image:url(${slides[step].img})`), step = (step + 1 == slides.length) ? 0 : step + 1) : div.setAttribute('style', `background-image:url(${slides[step].img});left:-60%`)
         carusel.appendChild(div)
     }
 }
@@ -105,9 +95,9 @@ function btnNextmove() {
     carusel.removeEventListener('touchend', swipe)
     ofset = (ofset + 1 == slides.length) ? 0 : ofset + 1;
     let caruselSlides = carusel.querySelectorAll('.carusel__card')
-    caruselSlides[0].style.left = "-100%"
+    caruselSlides[0].style.left = "-60%"
     caruselSlides[1].style.left = "21.5%"
-    setTimeout(function () { carusel.removeChild(caruselSlides[0]), carusel.removeChild(caruselSlides[2]), btnNext.addEventListener('click', btnNextmove), carusel.addEventListener('touchend', swipe) }, 500)
+    setTimeout(function () { carusel.removeChild(caruselSlides[0]), carusel.removeChild(caruselSlides[2]), btnNext.addEventListener('click', btnNextmove), carusel.addEventListener('touchend', swipe) }, 750)
     createCards()
     contentBotBg.innerHTML = slides[ofset].bg
     content.setAttribute('style', `background-image:  url("${slides[ofset].contentBg}")`)
@@ -121,8 +111,8 @@ function btnPrevmove() {
     ofset = (ofset - 1 < 0) ? slides.length - 1 : ofset - 1;
     let caruselSlides = carusel.querySelectorAll('.carusel__card')
     caruselSlides[2].style.left = "21.5%"
-    caruselSlides[0].style.left = "100%"
-    setTimeout(function () { carusel.removeChild(caruselSlides[0]), carusel.removeChild(caruselSlides[1]), btnPrev.addEventListener('click', btnPrevmove), carusel.addEventListener('touchend', swipe) }, 500)
+    caruselSlides[0].style.left = "105%"
+    setTimeout(function () { carusel.removeChild(caruselSlides[0]), carusel.removeChild(caruselSlides[1]), btnPrev.addEventListener('click', btnPrevmove), carusel.addEventListener('touchend', swipe) }, 750)
     createCards()
     contentBotBg.innerHTML = slides[ofset].bg
     content.setAttribute('style', `background-image:  url("${slides[ofset].contentBg}")`)
@@ -134,8 +124,8 @@ btnNext.addEventListener('click', btnNextmove)
 btnPrev.addEventListener('click', btnPrevmove)
 
 
-let initialPoint;
-let finalPoint;
+let initialPoint = null;
+let finalPoint = null;
 carusel.addEventListener('touchstart', function (e) {
     e.preventDefault();
     e.stopPropagation();
@@ -163,8 +153,8 @@ function firstClick() {
 }
 
 function loadTopBg(move) {
-    let ofsetNext
-    let ofsetPrev
+    let ofsetNext = null
+    let ofsetPrev = null
     if (move == "next") {
         ofsetNext = (ofset + 1 > contentTopBg.length - 1) ? 0 : ofset + 1;
         ofsetPrev = (ofset == 0) ? contentTopBg.length - 1 : ofset
@@ -175,5 +165,4 @@ function loadTopBg(move) {
     }
     contentTopBg[ofsetNext].classList.add('active')
     contentTopBg[ofsetPrev].classList.remove('active')
-
 }
