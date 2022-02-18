@@ -4,11 +4,13 @@
 box-sizing: border-box;
 width: 1280px;
 padding:50px 130px;
-position:relative;
+position: relative;
 overflow-X: hidden;
 overflow-y: auto;
 perspective: 100px;
 }
+
+.container::-webkit-scrollbar{width: 0;}
 
 .container:after{
     content:'';
